@@ -563,7 +563,7 @@ Bu doküman, ORBIT ROS 2 projesinde kullanılan mesaj tiplerini ve bu mesajları
     "system_error": "int8",
     "nav2": "int8",
     "keepout": "int8",
-    "wifi": "wifi"
+    "wifi": "int8"
     }
    ```
 
