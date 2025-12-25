@@ -394,9 +394,9 @@ Bu doküman, ORBIT ROS 2 projesinde kullanılan mesaj tiplerini ve bu mesajları
 
    ```json
     {
-    "time": "float",
-    "linear_x": "float",
-    "angular_z": "float"
+    "time": "float64",
+    "linear_x": "float64",
+    "angular_z": "float64"
     }
    ```
 
@@ -603,7 +603,7 @@ Bu doküman, ORBIT ROS 2 projesinde kullanılan mesaj tiplerini ve bu mesajları
     }
    ```
    Açıklama:
-    0-360 derece arasinda yon verisini verir.
+    0-360 derece arasinda yon verisini verir. Kumpasin okunu bu aciya gore ayarlanir.
 
 28. **Battery Data Publisher**
    
@@ -623,6 +623,25 @@ Bu doküman, ORBIT ROS 2 projesinde kullanılan mesaj tiplerini ve bu mesajları
    ```
    Açıklama:
     max_voltage ve min voltage robotun ustundeki pilin max ve min degeridir. voltage_smth da pilin anlik voltage degeridir bu degerlere gore pil gostergesi seviyesi ayarlanir.
+
+29. **Wifi Bilgilendirme **
+   
+   Topic: `wifi/status`
+
+   Msg_type: `amr_websocket_interfaces/WifiStatus`
+
+   Msg_definition:
+
+   ```json
+    {
+    "is_ready": "bool",
+    "ssid": "string",
+    "ip_address": "string"
+    }
+   ```
+   Açıklama:
+    Robotun bagli oldugu wifi`in ssid ve ip adresini yayinlar.
+
 
 ## Subscribers
 
@@ -842,9 +861,9 @@ Bu doküman, ORBIT ROS 2 projesinde kullanılan mesaj tiplerini ve bu mesajları
 
    ```json
     {
-    "time": "float",
-    "linear_x": "float",
-    "angular_z": "float"
+    "time": "float64",
+    "linear_x": "float64",
+    "angular_z": "float64"
     }
    ```
 
@@ -869,9 +888,9 @@ Bu doküman, ORBIT ROS 2 projesinde kullanılan mesaj tiplerini ve bu mesajları
 
    ```json
     {
-    "time": "float",
-    "linear_x": "float",
-    "angular_z": "float"
+    "time": "float64",
+    "linear_x": "float64",
+    "angular_z": "float64"
     }
    ```
 
@@ -918,14 +937,24 @@ Bu doküman, ORBIT ROS 2 projesinde kullanılan mesaj tiplerini ve bu mesajları
 
    ```json
     {
-    "message_type": "int32",
-    "face": "string",
+    "message_type": "int8",
+    "face": "int8",
     "record": "string",
     "motion": "string",
-    "command": "Twist[]",
-    "video": "string"
+    "video": "string",
+    "command": "Move[]"
     }
    ```
+
+   Alt mesaj: `Move`
+
+   ```json
+    {
+    "time": "float64",
+    "linear_x": "float64",
+    "angular_z": "float64"
+    }
+   
 
    Açıklama:
     Robotun ardışık görevler dizisini yürütmesi için bu topic'e görev listesi gönderilir.
