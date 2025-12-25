@@ -954,7 +954,7 @@ Bu doküman, ORBIT ROS 2 projesinde kullanılan mesaj tiplerini ve bu mesajları
     "linear_x": "float64",
     "angular_z": "float64"
     }
-   
+   ```
 
    Açıklama:
     Robotun ardışık görevler dizisini yürütmesi için bu topic'e görev listesi gönderilir.
