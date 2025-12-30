@@ -627,7 +627,7 @@ Bu doküman, ORBIT ROS 2 projesinde kullanılan mesaj tiplerini ve bu mesajları
    Açıklama:
     max_voltage ve min voltage robotun ustundeki pilin max ve min degeridir. voltage_smth da pilin anlik voltage degeridir bu degerlere gore pil gostergesi seviyesi ayarlanir.
 
-29. **Wifi Bilgilendirme **
+29. **Wifi Bilgilendirme**
    
    Topic: `wifi/status`
 
