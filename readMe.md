@@ -645,6 +645,42 @@ Bu doküman, ORBIT ROS 2 projesinde kullanılan mesaj tiplerini ve bu mesajları
    Açıklama:
     Robotun bagli oldugu wifi`in ssid ve ip adresini yayinlar.
 
+30. **Update Yuzdeligi Goruntuleme**
+   
+   Topic: `update_progress`
+
+   Msg_type: `std_msgs/Int32`
+
+   Msg_definition:
+
+   ```json
+    {
+    "data": "Int32"
+    }
+   ```
+   Açıklama:
+    0 ile 100 arasindadir, sistem guncellenmesini takip eder.
+
+30. **Update Yuzdeligi Goruntuleme**
+   
+   Topic: `/update/data`
+
+   Msg_type: `amr_websocket_interfaces/UpdateStatus`
+
+   Msg_definition:
+
+   ```json
+    {
+    "version": "string",
+    "update_status": "bool",
+    "msg": "string"
+    }
+   ```
+   Açıklama:
+    version: sistemin en guncel versiynunu gosterir
+    update_status: False ise Sistem Güncel
+    update_status: True ise Sistem Guncellenicek Kullaniciya sistemi guncellemelisin diye uyari verilicek. guncellemek isteyip evet derse start_system_update servisini tetikliyicek.
+    msg: Sistem guncel mi degil mi onun aciklamsini yapar.
 
 ## Subscribers
 
@@ -1508,3 +1544,18 @@ Bu doküman, ORBIT ROS 2 projesinde kullanılan mesaj tiplerini ve bu mesajları
 
         Istenildigi zaman videoyu durdurmak icin kullanilir    
 
+18. **Update Tetikleme**
+   
+   Service_name: `/start_system_update`
+   
+   Service_type: `std_srvs/Trigger`
+
+   Service_definition:
+
+   [std_srvs/Trigger](https://docs.ros.org/en/noetic/api/std_srvs/html/srv/Trigger.html)
+
+        Kullanilagi Zamanlar
+
+        Robota guncelleme gerekli ise bu servis cagrilir ve update_progress topiginden yuzde kac oldugu takip edilir.
+        
+        Tetikleme yapmadan once kullanciya evet hayir seklinde sorulur. Bu surecte robotun kapatilmamasi ve guncelleme bitesiye kadar herhangi bir islem yapilmamasi soylenir. Bu islem yaklasik 2 3 dakika surebilir. 
