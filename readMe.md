@@ -661,7 +661,7 @@ Bu doküman, ORBIT ROS 2 projesinde kullanılan mesaj tiplerini ve bu mesajları
    Açıklama:
     0 ile 100 arasindadir, sistem guncellenmesini takip eder.
 
-30. **Update Yuzdeligi Goruntuleme**
+30. **Update Gereklimi**
    
    Topic: `/update/data`
 
