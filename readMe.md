@@ -682,6 +682,22 @@ Bu doküman, ORBIT ROS 2 projesinde kullanılan mesaj tiplerini ve bu mesajları
     update_status: True ise Sistem Guncellenicek Kullaniciya sistemi guncellemelisin diye uyari verilicek. guncellemek isteyip evet derse start_system_update servisini tetikliyicek.
     msg: Sistem guncel mi degil mi onun aciklamsini yapar.
 
+31. **Mute Takibi**
+   
+   Topic: `/mute_voice_status`
+
+   Msg_type: `std_msgs/msg/Bool`
+
+   Msg_definition:
+
+   ```json
+    {
+    "data": "bool"
+    }
+   ```
+   Açıklama:
+    True ise Unmute, False ise Mute durumdadir.
+
 ## Subscribers
 
 1. **cmd_vel Topic**
@@ -1559,3 +1575,17 @@ Bu doküman, ORBIT ROS 2 projesinde kullanılan mesaj tiplerini ve bu mesajları
         Robota guncelleme gerekli ise bu servis cagrilir ve update_progress topiginden yuzde kac oldugu takip edilir.
         
         Tetikleme yapmadan once kullanciya evet hayir seklinde sorulur. Bu surecte robotun kapatilmamasi ve guncelleme bitesiye kadar herhangi bir islem yapilmamasi soylenir. Bu islem yaklasik 2 3 dakika surebilir. 
+
+19. **Mute and Unmute Tetikleme**
+   
+   Service_name: `/change_mute_voice`
+   
+   Service_type: `std_srvs/Trigger`
+
+   Service_definition:
+
+   [std_srvs/Trigger](https://docs.ros.org/en/noetic/api/std_srvs/html/srv/Trigger.html)
+
+        Cagirildiginda sistem mute ise unmute, unmute ise mute olucak.
+
+        
