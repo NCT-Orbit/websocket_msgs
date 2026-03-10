@@ -698,6 +698,22 @@ Bu doküman, ORBIT ROS 2 projesinde kullanılan mesaj tiplerini ve bu mesajları
    Açıklama:
     True ise Unmute, False ise Mute durumdadir.
 
+32. **Qr Code Takibi**
+   
+   Topic: `/qr_code/status`
+
+   Msg_type: `std_msgs/msg/Bool`
+
+   Msg_definition:
+
+   ```json
+    {
+    "data": "bool"
+    }
+   ```
+   Açıklama:
+    True ise qr code acik, False ise qr code kapalidir.
+
 ## Subscribers
 
 1. **cmd_vel Topic**
@@ -1588,4 +1604,15 @@ Bu doküman, ORBIT ROS 2 projesinde kullanılan mesaj tiplerini ve bu mesajları
 
         Cagirildiginda sistem mute ise unmute, unmute ise mute olucak.
 
-        
+20. **Qr Code Kontorlu**
+   
+   Service_name: `/qr_code`
+   
+   Service_type: `std_srvs/Trigger`
+
+   Service_definition:
+
+   [std_srvs/Trigger](https://docs.ros.org/en/noetic/api/std_srvs/html/srv/Trigger.html)
+
+        Cagirildiginda qr code okuma kapali ise acar acik ise kapatir.
+     
